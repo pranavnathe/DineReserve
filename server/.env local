@@ -1,0 +1,8 @@
+PORT = 8000
+CORS_ORIGIN = * 
+# add frontend url
+
+MONGODB_URL = mongodb://localhost:27017 
+
+NODE_ENV = development 
+# production || development
