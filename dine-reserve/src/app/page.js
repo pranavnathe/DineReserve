@@ -2,6 +2,7 @@ import Image from "next/image";
 import Card from "./components/Card";
 import restaurants from "../../data";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -51,16 +52,20 @@ export default function Home() {
                     </p>
 
                     {/* Sample Content */}
-                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {restaurants.map((item) => (
-                            <Card
+                            <Link
                                 key={item.srno}
-                                name={item.name}
-                                image={item.image}
-                                cuisine={item.cuisine}
-                                rating={item.rating}
-                                location={item.location}
-                            />
+                                href={`/restaurants/${item.srno}`}
+                            >
+                                <Card
+                                    name={item.name}
+                                    image={item.image}
+                                    cuisine={item.cuisine}
+                                    rating={item.rating}
+                                    location={item.location}
+                                />
+                            </Link>
                         ))}
                     </div>
                 </div>
