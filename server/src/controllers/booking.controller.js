@@ -75,6 +75,34 @@ const getBookingsByMobile = async (req, res) => {
     }
 };
 
+// Controller to get a booking by ID
+export const getBookingById = async (req, res) => {
+    try {
+        const { bookingId } = req.params;
+
+        // Find the booking by its ID
+        const booking = await Booking.findById(bookingId);
+
+        if (!booking) {
+            return res.status(404).json({
+                success: false,
+                message: "Booking not found.",
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            booking,
+        });
+    } catch (error) {
+        console.error("Error fetching booking by ID:", error);
+        return res.status(500).json({
+            success: false,
+            message: "An error occurred while fetching the booking.",
+        });
+    }
+};
+
 // Get available time slots for a restaurant
 const getAvailableSlots = async (req, res) => {
     try {
