@@ -37,8 +37,8 @@ export default function Home() {
                         <div className="flex">
                             <input
                                 type="text"
-                                placeholder="Search for restaurants, cuisine, or dishes"
-                                className="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-800"
+                                placeholder="Search for restaurants"
+                                className="flex-grow px-1 py-3 rounded-l-md focus:outline-none text-gray-800"
                             />
                             <button className="bg-red-500 text-white px-6 py-3 rounded-r-md hover:bg-red-600">
                                 Search
